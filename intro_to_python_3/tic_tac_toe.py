@@ -85,3 +85,15 @@ while play:
             row_choice = int(input("What row do you want to play? (0, 1, 2): "))
             print()
             game, played = game_board(game, current_player, row_choice, column_choice)
+
+        if win(game):
+            game_won = True
+            again = input("The game is over! Would you like to play again? (y/n) ")
+            if again.lower() == "y":
+                print("restarting")
+            elif again.lower() == "n":
+                print("See you later!")
+                play = False
+            else:
+                print("enter y or n next time moron! Bye!!!")
+                play = False
