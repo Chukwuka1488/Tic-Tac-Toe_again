@@ -6,8 +6,8 @@ game = [[2, 0, 1],
         [2, 0, 1]]
 
 # vertical winner
-columns = [0, 1, 2]
-for col in columns:
+
+for col in range(len(game)):
     check = []
     for row in game:
         # print(row[0])
