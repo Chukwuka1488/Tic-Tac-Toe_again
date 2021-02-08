@@ -1,10 +1,17 @@
 # create the board
 # list of lists to represent game board
 
-game = [[2, 0, 1],
-        [2, 0, 1],
+game = [[2, 0, 2],
+        [0, 2, 1],
         [2, 0, 1]]
+# diagonal winner
+if game[0][0] == game[1][1] == game[2][2]:
+    print("Winner")
 
+if game[2][0] == game[1][1] == game[0][2]:
+    print("Winner")
+
+'''
 # vertical winner
 
 for col in range(len(game)):
@@ -18,6 +25,7 @@ for col in range(len(game)):
     else:
         print(check)
         print('Loser')
+'''
 # horizontal winner
 
 '''
