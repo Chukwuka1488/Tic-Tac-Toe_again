@@ -5,7 +5,21 @@ game = [[0, 1, 1],
         [0, 0, 0],
         [0, 2, 2]]
 
+# vertical winner
+
+check = []
+for row in game:
+    # print(row[0])
+    check.append(row[0])
+if check.count(check[0]) == len(check) and check[0] != 0:
+    print(check)
+    print("Winner")
+else:
+    print(check)
+    print('Loser')
 # horizontal winner
+
+'''
 def win(current_game):
     for row in game:
         print(row)
@@ -16,6 +30,7 @@ def win(current_game):
 
 
 win(game)
+'''
 
 # functions use when we want a repetitive result from our program
 
@@ -29,7 +44,6 @@ win(game)
 #         return game_map
 #     except IndexError as e:
 #         print("Error: make sure you input row/column as 0, 1 or 2?", e)
-# 
 #     except  Exception as e:
 #         print("something bad just happened!", e)
 # 
