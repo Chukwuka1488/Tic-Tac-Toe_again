@@ -4,12 +4,26 @@
 game = [[2, 0, 2],
         [0, 2, 1],
         [2, 0, 1]]
+# cols = list(reversed(range(len(game))))
+# rows = range(len(game))
+
+# for col, row in zip(reversed(range(len(game))), range(len(game))):
+#     print(col, row)
+diags = []
+for col, row in enumerate(reversed(range(len(game)))):
+    print(col, row)
+    diags.append(game[row][col])
+
 # diagonal winner
+diags = []
+for idx in range(len(game)):
+    diags.append(game[idx][idx])
+
 if game[0][0] == game[1][1] == game[2][2]:
     print("Winner")
 
-if game[2][0] == game[1][1] == game[0][2]:
-    print("Winner")
+# if game[2][0] == game[1][1] == game[0][2]:
+#     print("Winner")
 
 '''
 # vertical winner
