@@ -5,7 +5,7 @@ game = [[0, 1, 1],
         [0, 0, 0],
         [0, 2, 2]]
 
-
+# horizontal winner
 def win(current_game):
     for row in game:
         print(row)
@@ -13,6 +13,8 @@ def win(current_game):
             print("Winner")
         else:
             print('Loser')
+
+
 win(game)
 
 # functions use when we want a repetitive result from our program
