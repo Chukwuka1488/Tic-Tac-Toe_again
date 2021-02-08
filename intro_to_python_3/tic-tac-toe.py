@@ -9,12 +9,12 @@ game = [[0, 0, 0],
 def win(current_game):
     for row in game:
         print(row)
-        col1 = row[0]
-        col2 = row[1]
-        col3 = row[2]
-
-        if col1 == col2 == col3:
-            print("You won!!!")
+        all_match = True
+        for item in row:
+            if item != row[0]:
+                all_match == True
+        if all_match:
+            print("Winner")
 
 win(game)
 
