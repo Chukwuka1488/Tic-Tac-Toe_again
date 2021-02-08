@@ -1,19 +1,15 @@
 # create the board
 # list of lists to represent game board
 
-game = [[1, 1, 1],
-        [0, 1, 0],
+game = [[0, 1, 1],
+        [0, 0, 0],
         [0, 2, 2]]
 
 
 def win(current_game):
     for row in game:
         print(row)
-        all_match = True
-        for item in row:
-            if item != row[0]:
-                all_match = False
-        if all_match:
+        if row.count(row[0]) == len(row) and row[1] == 0:
             print("Winner")
         else:
             print('Loser')
