@@ -1,7 +1,4 @@
-game = [[2, 0, 2],
-        [0, 2, 1],
-        [2, 0, 1]]
-
+import itertools
 
 def win(current_game):
     # horizontal winner
@@ -54,6 +51,7 @@ while play:
 
     game_won = False
     game = game_board(game, just_display=True)
+    player_choice = itertools.cycle([1, 2])
     while not game_won:
         current_player = 1
         column_choice = input("What column do you want to play? (0, 1, 2): ")
