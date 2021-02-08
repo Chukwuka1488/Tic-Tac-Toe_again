@@ -1,5 +1,6 @@
 import itertools
 
+
 def win(current_game):
     # horizontal winner
     for row in game:
@@ -30,16 +31,21 @@ def win(current_game):
 
 def game_board(game_map, player=0, row=0, column=0, just_display=False):
     try:
+        if game_map[row][map] != 0:
+            print("This position is taken! Choose another!")
+            return False
         print("   0  1  2")  # column
         if not just_display:
             game_map[row][column] = player
-        for count, row in enumerate(game_map):  #enumerate: returns the index and the value
+        for count, row in enumerate(game_map):  # enumerate: returns the index and the value
             print(count, row)
         return game_map
     except IndexError as e:
         print("Error: make sure you input row/column as 0, 1 or 2?", e)
-    except  Exception as e:
+        return False
+    except Exception as e:
         print("something bad just happened!", e)
+        return False
 
 
 play = True
