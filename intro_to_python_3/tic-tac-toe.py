@@ -1,9 +1,9 @@
 # create the board
 # list of lists to represent game board
 
-game = [[0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]]
+game = [[1, 1, 1],
+        [0, 1, 0],
+        [0, 2, 2]]
 
 
 def win(current_game):
@@ -12,10 +12,11 @@ def win(current_game):
         all_match = True
         for item in row:
             if item != row[0]:
-                all_match == True
+                all_match = False
         if all_match:
             print("Winner")
-
+        else:
+            print('Loser')
 win(game)
 
 # functions use when we want a repetitive result from our program
