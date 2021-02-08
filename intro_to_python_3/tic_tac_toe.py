@@ -47,7 +47,7 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
             print("This position is taken! Choose another!")
             print()
             return game_map, False
-        print("   0  1  2")  # column
+        print("   " + "  ".join(str(i) for i in range(len(game_map))))  # column
         if not just_display:
             game_map[row][column] = player
         for count, row in enumerate(game_map):  # enumerate: returns the index and the value
