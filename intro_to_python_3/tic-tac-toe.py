@@ -1,22 +1,23 @@
 # create the board
 # list of lists to represent game board
 
-game = [[0, 1, 1],
-        [0, 0, 0],
-        [0, 2, 2]]
+game = [[2, 0, 1],
+        [2, 0, 1],
+        [2, 0, 1]]
 
 # vertical winner
-
-check = []
-for row in game:
-    # print(row[0])
-    check.append(row[0])
-if check.count(check[0]) == len(check) and check[0] != 0:
-    print(check)
-    print("Winner")
-else:
-    print(check)
-    print('Loser')
+columns = [0, 1, 2]
+for col in columns:
+    check = []
+    for row in game:
+        # print(row[0])
+        check.append(row[col])
+    if check.count(check[0]) == len(check) and check[0] != 0:
+        print(check)
+        print("Winner")
+    else:
+        print(check)
+        print('Loser')
 # horizontal winner
 
 '''
