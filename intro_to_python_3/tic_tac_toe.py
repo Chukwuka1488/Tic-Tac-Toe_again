@@ -1,5 +1,5 @@
 import itertools
-
+import numpy as np
 
 def win(current_game):
     def all_same(l):
@@ -66,9 +66,8 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
 play = True
 players = [1, 2]
 while play:
-    game = [[0, 0, 0],
-            [0, 0, 0],
-            [0, 0, 0]]
+    game_size = int(input("what size game of tic_tac_toe will you like to play? Enter value: "))
+    game = [[0 for i in range(game_size)] for i in range(game_size)]
 
     game_won = False
     game, _ = game_board(game, just_display=True)
