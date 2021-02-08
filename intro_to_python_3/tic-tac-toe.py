@@ -4,56 +4,45 @@
 game = [[2, 0, 2],
         [0, 2, 1],
         [2, 0, 1]]
-# cols = list(reversed(range(len(game))))
-# rows = range(len(game))
 
-# for col, row in zip(reversed(range(len(game))), range(len(game))):
-#     print(col, row)
-diags = []
-for col, row in enumerate(reversed(range(len(game)))):
-    print(col, row)
-    diags.append(game[row][col])
 
-# diagonal winner
-diags = []
-for idx in range(len(game)):
-    diags.append(game[idx][idx])
-
-if game[0][0] == game[1][1] == game[2][2]:
-    print("Winner")
-
-# if game[2][0] == game[1][1] == game[0][2]:
-#     print("Winner")
-
-'''
-# vertical winner
-
-for col in range(len(game)):
-    check = []
-    for row in game:
-        # print(row[0])
-        check.append(row[col])
-    if check.count(check[0]) == len(check) and check[0] != 0:
-        print(check)
-        print("Winner")
-    else:
-        print(check)
-        print('Loser')
-'''
-# horizontal winner
-
-'''
 def win(current_game):
+    # horizontal winner
     for row in game:
         print(row)
         if row.count(row[0]) == len(row) and row[1] == 0:
-            print("Winner")
-        else:
-            print('Loser')
+            print(f"Player {row[0]} is the winner horizontally!")
+
+    # diagonals
+    diags = []
+    for col, row in enumerate(reversed(range(len(game)))):
+        print(col, row)
+        diags.append(game[row][col])
+    if diags.count(diags[0]) == len(diags) and diags[1] == 0:
+        print(f"Player {diags[0]} is the winner diagonally upwards - left to right!")
+
+    diags = []
+    for idx in range(len(game)):
+        diags.append(game[idx][idx])
+    if diags.count(diags[0]) == len(diags) and diags[1] == 0:
+        print(f"Player {diags[0]} is the winner diagonally downwards - left to right!")
+
+    # verticals
+    for col in range(len(game)):
+        check = []
+        for row in game:
+            check.append(row[col])
+        if check.count(check[0]) == len(check) and check[0] != 0:
+            print(f"Player {check[0]} is the winner vertically!")
 
 
 win(game)
-'''
+
+# if game[0][0] == game[1][1] == game[2][2]:
+#     print("Winner")
+# if game[2][0] == game[1][1] == game[0][2]:
+#     print("Winner")
+
 
 # functions use when we want a repetitive result from our program
 
