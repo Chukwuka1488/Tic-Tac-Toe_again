@@ -54,6 +54,6 @@ while play:
     player_choice = itertools.cycle([1, 2])
     while not game_won:
         current_player = next(player_choice)
-        column_choice = input("What column do you want to play? (0, 1, 2): ")
-        row_choice = input("What row do you want to play? (0, 1, 2): ")
+        column_choice = int(input("What column do you want to play? (0, 1, 2): "))
+        row_choice = int(input("What row do you want to play? (0, 1, 2): "))
         game = game_board(game, current_player, row_choice, column_choice)
