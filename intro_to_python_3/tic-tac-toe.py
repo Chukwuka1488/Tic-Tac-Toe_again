@@ -16,8 +16,8 @@ def game_board(game_map, player=0, row=0, column=0, just_display=False):
         for count, row in enumerate(game_map):  # Built-in functions using enumerate: returns the index and the value
             print(count, row)
         return game_map
-    except:
-        print("something went wrong due to input!!!")
+    except IndexError as e:
+        print("Error: make sure you input row/column as 0, 1 or 2?", e)
 
 
 game = game_board(game, just_display=True)
